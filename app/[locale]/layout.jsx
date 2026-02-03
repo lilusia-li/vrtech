@@ -1,5 +1,7 @@
-import { locales, defaultLocale } from "@/lib/i18n.js";
+import { translations, locales, defaultLocale } from "@/lib/i18n.js";
 import localFont from "next/font/local";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../globals.css";
 
 const manrope = localFont({
@@ -84,9 +86,15 @@ export function generateMetadata() {
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   const currentLocale = locale || defaultLocale;
+  const t = translations[currentLocale] || translations[defaultLocale];
+
   return (
     <html lang={currentLocale}>
-      <body className={`${manrope.variable} antialiased`}>{children}</body>
+      <body className={`${manrope.variable} antialiased`}>
+        <Header translations={t}></Header>
+        {children}
+        <Footer></Footer>
+      </body>
     </html>
   );
 }
