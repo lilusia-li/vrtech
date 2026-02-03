@@ -39,7 +39,7 @@ export default function Header({ translations }) {
           <div className="flex items-center">
             <div className="font-normal text-xs">{h.resident}</div>
             <div className="max-w-[96px] max-h-[25px]">
-              <img src="/header/logo_resident.svg" alt="Логотип astana hub" />
+              <img src="/header/logo_resident.svg" alt="Logo astana hub" />
             </div>
           </div>
         </div>
