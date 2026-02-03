@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 export default function Header({ translations }) {
-  const { header: h } = translations;
+  const { header: h, phone } = translations;
 
   const pathname = usePathname();
   const currentLocale = pathname.split("/")[1] || "ru";
@@ -60,13 +60,17 @@ export default function Header({ translations }) {
         </nav>
       </div>
       <div className="flex gap-x-[4rem] items-center">
-        <a href={`tel:${h.validPhone}`} className="font-bold text-[1.125rem]">
-          {h.phone}
+        <a
+          href={`tel:${phone.validPhone}`}
+          className="font-bold text-[1.125rem]"
+        >
+          {phone.phone}
         </a>
         <div className="flex gap-x-[1rem]">
           {["ru", "en"].map((locale) => {
             return (
               <button
+                key={locale}
                 onClick={() => {
                   currentLocale === locale ? "" : switchLocale(locale);
                 }}
