@@ -50,7 +50,9 @@ export default function Header({ translations }) {
             return (
               <Link className="shrink-0" key={navObj.key} href={navObj.url}>
                 <p
-                  className={clsx({ "font-semibold": pathname === navObj.url })}
+                  className={clsx({
+                    "cursor-text font-semibold": pathname === navObj.url,
+                  })}
                 >
                   {navObj.title}
                 </p>
@@ -59,6 +61,8 @@ export default function Header({ translations }) {
           })}
         </nav>
       </div>
+
+      {/* Область переключения языков */}
       <div className="flex gap-x-[4rem] items-center">
         <a
           href={`tel:${phone.validPhone}`}
