@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Button from "../[locale]/reUseComponents/Button";
+import Button from "../reUseComponents/Button";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
