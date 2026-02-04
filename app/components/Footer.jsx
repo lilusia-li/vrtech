@@ -154,10 +154,9 @@ export default function Footer({ translations }) {
           {f.workSchedule}
         </time>
 
-        <Button
-          label={f.buttonLabel}
-          style="max-w-[17rem] max-h-[3.7rem] text-[1.25rem] mb-[1.8rem] mt-[1.2rem]"
-        ></Button>
+        <Button style="max-w-[17rem] max-h-[3.7rem] text-[1.25rem] mb-[1.8rem] mt-[1.2rem]">
+          {f.buttonLabel}
+        </Button>
         {[
           {
             title: `${f.publicOffer}`,
