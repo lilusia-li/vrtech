@@ -1,4 +1,5 @@
 import Hero from "@/app/components/Hero";
+import Opportunities from "@/app/components/Opportunities";
 import { defaultLocale, translations } from "@/lib/i18n";
 
 export default async function AiPage({ params }) {
@@ -8,7 +9,7 @@ export default async function AiPage({ params }) {
 
   return (
     <div>
-      <Hero translations={t}></Hero>
+      <Hero translations={t} currentLocale={currentLocale}></Hero>
     </div>
   );
 }
