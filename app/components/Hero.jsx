@@ -1,0 +1,92 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+import Button from "../reUseComponents/Button";
+
+export default function Hero({ translations }) {
+  const { hero: h } = translations;
+
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || "ru";
+
+  const getTitle = () => {
+    if (currentLocale === "ru") {
+      return (
+        <h1 className="text-accent text-[2.625rem] font-semibold">
+          {h.sectionTitle}
+        </h1>
+      );
+    }
+
+    return (
+      <h1 className="text-black text-[2.625rem] font-semibold">
+        <p>
+          <span className="text-accent">{h.sectionTitle.part_1_blue}</span>
+          {h.sectionTitle.part_2}
+        </p>
+        <p>{h.sectionTitle.part_3}</p>
+        <p>
+          {h.sectionTitle.part_4}
+          <span className="text-accent">{h.sectionTitle.part_5_blue}</span>
+        </p>
+      </h1>
+    );
+  };
+  const getAdditionalText = () => {
+    if (currentLocale === "ru") {
+      return (
+        <p>
+          <span>{h.additionalText.part_1}</span>
+          <span className="text-accent">{h.additionalText.part_blue}</span>
+          <span>{h.additionalText.part_2}</span>
+        </p>
+      );
+    }
+    return null;
+  };
+
+  return (
+    // Задел для картинки робота
+    // after:absolute after:content-['']
+    // after:top-0 after:w-full after:h-4/5
+    // after:bg-[url('/hero/robot.svg')] after:bg-no-repeat after:bg-right after:bg-contain"
+
+    <section className="px-8 py-[7rem] ">
+      {/* content container */}
+      <div className="max-w-[89rem] w-full m-auto">
+        {/* left part */}
+        <div className="max-w-[39rem] flex flex-col gap-y-[4.4rem]">
+          {getTitle()}
+
+          <div>
+            {h.description.map((descriptionPart) => {
+              return (
+                <p
+                  className={clsx({
+                    "text-black text-[1.875rem] font-semibold":
+                      currentLocale === "ru",
+                    "text-[1.375rem]": currentLocale === "en",
+                  })}
+                  key={descriptionPart}
+                >
+                  {descriptionPart}
+                </p>
+              );
+            })}
+          </div>
+
+          <Button
+            style="self-start min-w-[22rem]
+            px-[0.5rem] py-[1.5rem]
+            text-[1.25rem]"
+          >
+            {h.buttonLabel}
+          </Button>
+
+          {getAdditionalText()}
+        </div>
+      </div>
+    </section>
+  );
+}

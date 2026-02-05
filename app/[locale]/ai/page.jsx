@@ -1,3 +1,4 @@
+import Hero from "@/app/components/Hero";
 import { defaultLocale, translations } from "@/lib/i18n";
 
 export default async function AiPage({ params }) {
@@ -5,5 +6,9 @@ export default async function AiPage({ params }) {
   const currentLocale = locale || defaultLocale;
   const t = translations[currentLocale] || translations[defaultLocale];
 
-  return <div>ai</div>;
+  return (
+    <div>
+      <Hero translations={t}></Hero>
+    </div>
+  );
 }
