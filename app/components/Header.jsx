@@ -30,7 +30,7 @@ export default function Header({ translations }) {
 
   return (
     <header className="max-w-[89rem] w-full max-h-16 px-8 m-auto flex justify-between">
-      <div className="flex max-w-[38rem] w-full justify-between">
+      <div className="flex max-w-[38rem] w-full justify-between text-black">
         {/* Область логотипа */}
         <div className="flex flex-col items-end">
           <div className="-mt-[5px] max-w-[231px] max-h-[45px]">
@@ -50,7 +50,7 @@ export default function Header({ translations }) {
             return (
               <Link className="shrink-0" key={navObj.key} href={navObj.url}>
                 <p
-                  className={clsx({
+                  className={clsx("text-[1rem]", {
                     "cursor-text font-semibold": pathname === navObj.url,
                   })}
                 >
@@ -78,8 +78,8 @@ export default function Header({ translations }) {
                 onClick={() => {
                   currentLocale === locale ? "" : switchLocale(locale);
                 }}
-                className={clsx("font-bold text-[1.125rem] max-h-[2rem] ", {
-                  "text-[#219be3]": locale === currentLocale,
+                className={clsx("font-bold text-[1.125rem] max-h-[2rem]", {
+                  "text-accent": locale === currentLocale,
                   "cursor-pointer": locale !== currentLocale,
                 })}
               >
