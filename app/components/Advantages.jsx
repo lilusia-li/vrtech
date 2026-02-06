@@ -29,7 +29,7 @@ export default function Advantages({ translations }) {
   return (
     <section className="px-8 py-[7rem]">
       {/* content container */}
-      <div className="flex flex-col gap-y-[1rem] max-w-[89rem] w-full m-auto">
+      <div className="flex flex-col gap-y-[1rem] max-w-[85rem] w-full m-auto">
         <h2 className="text-accent text-[2.5rem] font-medium">{a.title}</h2>
         <ul className="grid grid-cols-3 gap-[2rem]">
           {advantages.map((advantage) => {

@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Button from "../reUseComponents/Button";
 import Opportunities from "./Opportunities";
@@ -52,7 +51,7 @@ export default function Hero({ translations, currentLocale }) {
 
     <section className="px-8 py-[7rem] ">
       {/* content container */}
-      <div className="flex flex-col gap-y-[7rem] max-w-[89rem] w-full m-auto">
+      <div className="flex flex-col gap-y-[7rem] max-w-[85rem] w-full m-auto">
         {/* left part */}
         <div className="max-w-[39rem] flex flex-col gap-y-[4.4rem]">
           {getTitle()}
