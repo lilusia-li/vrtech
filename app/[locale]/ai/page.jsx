@@ -1,5 +1,6 @@
 import Advantages from "@/app/components/Advantages";
 import Hero from "@/app/components/Hero";
+import Numbers from "@/app/components/Numbers";
 import Speech from "@/app/components/Speech";
 import Stages from "@/app/components/Stages";
 import Types from "@/app/components/Types";
@@ -17,6 +18,7 @@ export default async function AiPage({ params }) {
       <Types translations={t} currentLocale={currentLocale}></Types>
       <Stages translations={t}></Stages>
       <Speech translations={t}></Speech>
+      <Numbers translations={t}></Numbers>
     </div>
   );
 }
