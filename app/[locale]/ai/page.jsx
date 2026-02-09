@@ -1,5 +1,6 @@
 import Advantages from "@/app/components/Advantages";
 import Hero from "@/app/components/Hero";
+import Stages from "@/app/components/Stages";
 import Types from "@/app/components/Types";
 import { defaultLocale, translations } from "@/lib/i18n";
 
@@ -13,6 +14,7 @@ export default async function AiPage({ params }) {
       <Hero translations={t} currentLocale={currentLocale}></Hero>
       <Advantages translations={t}></Advantages>
       <Types translations={t} currentLocale={currentLocale}></Types>
+      <Stages translations={t}></Stages>
     </div>
   );
 }
