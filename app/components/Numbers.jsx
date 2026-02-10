@@ -2,7 +2,13 @@ export default function Numbers({ translations }) {
   const { numbers: n } = translations;
 
   return (
-    <section className="px-8 py-[7rem]">
+    <section
+      className="px-8 py-[7rem]"
+      style={{
+        backgroundImage:
+          "linear-gradient(0.742turn,rgba(235,240,253,1) 0%,rgba(251,251,253,0) 100%)",
+      }}
+    >
       {/* content container */}
       <div className="flex flex-col gap-y-[2rem] max-w-[85rem] w-full m-auto">
         <h2 className="text-accent text-[2.5rem] font-medium">{n.title}</h2>
