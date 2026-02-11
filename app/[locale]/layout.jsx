@@ -91,7 +91,7 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={currentLocale}>
       <body
-        className={`${manrope.variable} antialiased text-[1.25rem] text-primary font-normal bg-white`}
+        className={`${manrope.variable} antialiased text-[1.25rem] text-primary font-normal bg-white whitespace-pre-line`}
       >
         <Header translations={t}></Header>
         {children}

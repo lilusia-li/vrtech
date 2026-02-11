@@ -1,4 +1,5 @@
 import Advantages from "@/app/components/Advantages";
+import Cases from "@/app/components/Cases";
 import Clients from "@/app/components/Clients";
 import Hero from "@/app/components/Hero";
 import Numbers from "@/app/components/Numbers";
@@ -21,6 +22,7 @@ export default async function AiPage({ params }) {
       <Speech translations={t}></Speech>
       <Numbers translations={t}></Numbers>
       <Clients translations={t}></Clients>
+      <Cases translations={t}></Cases>
     </div>
   );
 }
