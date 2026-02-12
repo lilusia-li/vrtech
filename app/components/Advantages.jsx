@@ -27,7 +27,14 @@ export default function Advantages({ translations }) {
     },
   ];
   return (
-    <section className="px-8 py-[7rem]">
+    <section
+      className="px-8 py-[7rem] bg-[fdfdfd]"
+      style={{
+        backgroundImage: "url(/opportunities/bg.jpg",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       {/* content container */}
       <div className="flex flex-col gap-y-[1rem] max-w-[85rem] w-full m-auto">
         <h2 className="text-accent text-[2.5rem] font-medium">{a.title}</h2>
