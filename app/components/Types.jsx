@@ -4,7 +4,26 @@ import Button from "../reUseComponents/Button";
 export default function Types({ translations, currentLocale }) {
   const { types: t } = translations;
   return (
-    <section className="px-8 py-[7rem]">
+    <section className="px-8 py-[7rem] relative">
+      {/* background-images left */}
+      <div
+        className="absolute top-0 left-0 max-w-2/3 w-full h-full"
+        style={{
+          backgroundImage: "url(/types/bg-left.svg)",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden
+      ></div>
+      {/* background-images right */}
+      <div
+        className="absolute top-0 right-0 max-w-2/3 w-full h-full rotate-180"
+        style={{
+          backgroundImage: "url(/types/bg-right.svg)",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden
+      ></div>
+
       {/* content container */}
       <div className="flex flex-col gap-y-[2rem] max-w-[85rem] w-full m-auto">
         <h2 className="text-accent text-[2.5rem] font-medium">{t.title}</h2>
