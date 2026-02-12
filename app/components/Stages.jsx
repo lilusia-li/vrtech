@@ -29,7 +29,14 @@ export default function Stages({ translations }) {
     },
   ];
   return (
-    <section className="px-8 py-[7rem]">
+    <section
+      className="px-8 py-[7rem]"
+      style={{
+        backgroundImage: "url(/stages/bg.jpg",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* content container */}
       <div className="flex flex-col gap-y-[3rem] max-w-[85rem] w-full m-auto">
         <h2 className="text-accent text-[2.5rem] font-medium">{s.title}</h2>
