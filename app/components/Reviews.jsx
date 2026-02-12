@@ -44,7 +44,7 @@ export default function Reviews({ translations }) {
   const currentSlide = cards[indexFirstCard];
 
   return (
-    <section className="px-8 py-[3.5rem]">
+    <section className="px-8 py-[3.5rem] bg-[#fbfbfd]">
       {/* content container */}
       <div
         className="relative max-w-[85rem] w-full m-auto
