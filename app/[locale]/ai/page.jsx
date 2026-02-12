@@ -3,6 +3,7 @@ import Cases from "@/app/components/Cases";
 import Clients from "@/app/components/Clients";
 import Hero from "@/app/components/Hero";
 import Numbers from "@/app/components/Numbers";
+import Reviews from "@/app/components/Reviews";
 import Speech from "@/app/components/Speech";
 import Stages from "@/app/components/Stages";
 import Types from "@/app/components/Types";
@@ -23,6 +24,7 @@ export default async function AiPage({ params }) {
       <Numbers translations={t}></Numbers>
       <Clients translations={t}></Clients>
       <Cases translations={t}></Cases>
+      <Reviews translations={t}></Reviews>
     </div>
   );
 }
