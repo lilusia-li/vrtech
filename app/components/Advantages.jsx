@@ -28,9 +28,9 @@ export default function Advantages({ translations }) {
   ];
   return (
     <section
-      className="px-8 py-[7rem] bg-[fdfdfd]"
+      className="px-8 py-[7rem] bg-[#fdfdfd]"
       style={{
-        backgroundImage: "url(/opportunities/bg.jpg",
+        backgroundImage: "url(/advantages/bg.jpg)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
