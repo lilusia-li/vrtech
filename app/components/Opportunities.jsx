@@ -43,12 +43,7 @@ export default function Opportunities({ translations, currentLocale }) {
           return (
             <li
               key={opportunity.name}
-              className={clsx(
-                "pt-[82px] text-center max-w-[13.1rem] font-medium",
-                {
-                  "max-w-[21rem]": index === 0,
-                }
-              )}
+              className="pt-[82px] text-center font-medium flex-1"
               style={{
                 backgroundImage: `url(${opportunity.imageSrc})`,
                 backgroundPosition: "top",

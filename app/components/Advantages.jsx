@@ -43,7 +43,7 @@ export default function Advantages({ translations }) {
             return (
               <li
                 key={advantage.name}
-                className="min-h-[16.8rem] px-[3rem] py-[1rem]
+                className="min-h-[16.8rem] px-[1rem] py-[1rem]
                 rounded-[30px]"
                 style={{
                   alignItems: "top",
