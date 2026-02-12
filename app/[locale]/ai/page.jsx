@@ -1,4 +1,5 @@
 import Advantages from "@/app/components/Advantages";
+import AuditForm from "@/app/components/AuditForm";
 import Cases from "@/app/components/Cases";
 import Clients from "@/app/components/Clients";
 import Hero from "@/app/components/Hero";
@@ -19,12 +20,15 @@ export default async function AiPage({ params }) {
       <Hero translations={t} currentLocale={currentLocale}></Hero>
       <Advantages translations={t}></Advantages>
       <Types translations={t} currentLocale={currentLocale}></Types>
+      <AuditForm translations={t}></AuditForm>
       <Stages translations={t}></Stages>
       <Speech translations={t}></Speech>
       <Numbers translations={t}></Numbers>
       <Clients translations={t}></Clients>
+      <AuditForm translations={t}></AuditForm>
       <Cases translations={t}></Cases>
       <Reviews translations={t}></Reviews>
+      <AuditForm translations={t}></AuditForm>
     </div>
   );
 }
