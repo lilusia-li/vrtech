@@ -44,14 +44,32 @@ export default function Hero({ translations, currentLocale }) {
   };
 
   return (
-    // Задел для картинки робота
-    // after:absolute after:content-['']
-    // after:top-0 after:w-full after:h-4/5
-    // after:bg-[url('/hero/robot.svg')] after:bg-no-repeat after:bg-right after:bg-contain"
-
-    <section className="px-8 py-[7rem] ">
+    <section
+      className="px-8 py-[7rem]"
+      style={{
+        backgroundImage: "url(/hero/bg.png)",
+        backgroundPosition: "-50% 60%",
+        backgroundSize: "982px 930px",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* content container */}
-      <div className="flex flex-col gap-y-[7rem] max-w-[85rem] w-full m-auto">
+      <div
+        className="relative max-w-[85rem] w-full m-auto
+        flex flex-col gap-y-[7rem]"
+      >
+        {/* background-robot */}
+        <div
+          className="absolute w-[616px] h-[616px] right-0 -top-20"
+          style={{ backgroundImage: "url(/hero/robot.svg)" }}
+          aria-hidden
+        >
+          <div
+            className="absolute right-1/2 bottom-0 translate-x-1/2 w-[330px] h-[153px] bg-white"
+            style={{ boxShadow: "10px 10px 100px 100px rgba(255,255,255,1)" }}
+          ></div>
+        </div>
+
         {/* left part */}
         <div className="max-w-[39rem] flex flex-col gap-y-[4.4rem]">
           {getTitle()}
