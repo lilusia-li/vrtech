@@ -32,7 +32,7 @@ export default function Stages({ translations }) {
     <section
       className="px-8 py-[7rem]"
       style={{
-        backgroundImage: "url(/stages/bg.jpg",
+        backgroundImage: "url(/stages/bg.jpg)",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}

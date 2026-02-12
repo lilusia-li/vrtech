@@ -4,7 +4,7 @@ import Button from "../reUseComponents/Button";
 export default function Types({ translations, currentLocale }) {
   const { types: t } = translations;
   return (
-    <section className="px-8 py-[7rem] relative">
+    <section className="px-8 py-[7rem] relative  bg-[#fdfdfd]">
       {/* background-images left */}
       <div
         className="absolute top-0 left-0 max-w-2/3 w-full h-full"
