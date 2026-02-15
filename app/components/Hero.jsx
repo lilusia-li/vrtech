@@ -10,14 +10,20 @@ export default function Hero({ translations, currentLocale }) {
   const getTitle = () => {
     if (currentLocale === "ru") {
       return (
-        <h1 className="text-accent text-[2.625rem] font-semibold">
+        <h1
+          className="text-accent font-semibold
+          text-[1.625rem] md:text-[2.625rem]"
+        >
           {h.sectionTitle}
         </h1>
       );
     }
 
     return (
-      <h1 className="text-black text-[2.625rem] font-semibold">
+      <h1
+        className="text-black font-semibold
+        text-[1.625rem] md:text-[2.625rem]"
+      >
         <p>
           <span className="text-accent">{h.sectionTitle.part_1_blue}</span>
           {h.sectionTitle.part_2}
@@ -33,7 +39,10 @@ export default function Hero({ translations, currentLocale }) {
   const getAdditionalText = () => {
     if (currentLocale === "ru") {
       return (
-        <p className="max-xl:max-w-[33rem]">
+        <p
+          className="text-[0.6875rem] sm:text-[1.125rem]
+          lg:max-w-[27rem]"
+        >
           <span>{h.additionalText.part_1}</span>
           <span className="text-accent">{h.additionalText.part_blue}</span>
           <span>{h.additionalText.part_2}</span>
@@ -44,32 +53,22 @@ export default function Hero({ translations, currentLocale }) {
   };
 
   return (
-    <section className="px-8 pb-[5rem] pt-[6rem]">
+    <section className="px-[0.2rem] lg:px-8 py-[3rem] md:py-[6rem]">
       {/* content container */}
       <div
         className="relative w-full m-auto
         max-w-[72.5rem] xl:max-w-[85rem] 
         flex flex-col 
-        gap-y-[6rem] xl:gap-y-[7rem]"
+        gap-y-[3rem] md:gap-y-[4rem] lg:gap-y-[6rem] xl:gap-y-[7rem]
+        max-lg:text-center
+        items-center lg:items-start"
       >
-        {/* background robot */}
-        <div
-          className="absolute w-[616px] h-[616px] right-0 -top-20 z-0"
-          style={{ backgroundImage: "url(/hero/robot.svg)" }}
-          aria-hidden
-        >
-          <div
-            className="absolute right-1/2 bottom-0 translate-x-1/2 bg-white
-            w-[373px] h-[92px] xl:w-[330px] xl:h-[153px]"
-            style={{ boxShadow: "10px 10px 100px 100px rgba(255,255,255,1)" }}
-          ></div>
-        </div>
-
         {/* background gradient */}
         <div
           aria-hidden
           className="absolute w-[982px] h-[930px] -translate-1/2
-          left-0 top-1/2 z-0"
+          left-0 top-1/2 z-0
+          hidden lg:block"
           style={{
             backgroundImage: "url(/hero/bg.png)",
             backgroundSize: "cover",
@@ -80,7 +79,8 @@ export default function Hero({ translations, currentLocale }) {
         {/* content */}
         <div
           className="max-w-[39rem] flex flex-col leading-[1.3]
-          gap-y-[2rem] xl:gap-y-[4.4rem] z-10"
+          gap-y-[1rem] md:gap-y-[2rem] xl:gap-y-[4.4rem] z-10 
+          items-center lg:items-start"
         >
           {getTitle()}
 
@@ -89,7 +89,8 @@ export default function Hero({ translations, currentLocale }) {
               return (
                 <p
                   className={clsx({
-                    "text-black text-[1.875rem] font-semibold":
+                    "text-black font-semibold\
+                    text-[1rem] md:text-[1.75rem] lg:text-[1.875rem]":
                       currentLocale === "ru",
                     "text-[1.375rem]": currentLocale === "en",
                   })}
@@ -102,14 +103,35 @@ export default function Hero({ translations, currentLocale }) {
           </div>
 
           <Button
-            style="self-start min-w-[22rem]
-            px-[0.5rem] py-[1.5rem]
-            text-[1.25rem]"
+            style="lg:self-start min-w-[22rem]
+            max-md:order-last
+            px-[0.5rem] py-[1.2rem] md:py-[1.6rem]
+            text-[1rem] md:text-[1.25rem]"
           >
             {h.buttonLabel}
           </Button>
 
           {getAdditionalText()}
+        </div>
+
+        {/* background robot */}
+        <div
+          className="relative lg:absolute lg:right-0 lg:z-0
+          -top-5 lg:top-15 xl:-top-20
+          w-[261px] h-[245px] md:w-[502px] md:h-[475px] lg:w-[486px] xl:w-[616px]"
+          style={{
+            backgroundImage: "url(/hero/robot.svg)",
+            backgroundSize: "100% auto",
+            backgroundRepeat: "no-repeat",
+          }}
+          aria-hidden
+        >
+          <div
+            className="absolute right-1/2  translate-x-1/2 bg-white
+            -bottom-40 md:-bottom-20 lg:-bottom-5
+            w-[294px] h-[73px] xl:w-[330px] xl:h-[153px]"
+            style={{ boxShadow: "10px 10px 100px 100px rgba(255,255,255,1)" }}
+          ></div>
         </div>
 
         <Opportunities
