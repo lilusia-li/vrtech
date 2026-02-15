@@ -36,7 +36,10 @@ export default function Footer({ translations }) {
       }}
     >
       {/* content container */}
-      <div className="flex justify-between max-w-[85rem] w-full m-auto text-black">
+      <div
+        className="flex justify-between w-full m-auto text-black
+        max-w-[72.5rem] xl:max-w-[85rem]"
+      >
         {/* first column */}
         <div className="flex flex-col text-[0.875rem] text-less-dark">
           <div className={`max-w-[10.4rem] ${titleHeight} ${mbAfterTitle}`}>

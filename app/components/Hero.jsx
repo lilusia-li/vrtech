@@ -33,7 +33,7 @@ export default function Hero({ translations, currentLocale }) {
   const getAdditionalText = () => {
     if (currentLocale === "ru") {
       return (
-        <p>
+        <p className="max-xl:max-w-[33rem]">
           <span>{h.additionalText.part_1}</span>
           <span className="text-accent">{h.additionalText.part_blue}</span>
           <span>{h.additionalText.part_2}</span>
@@ -44,34 +44,44 @@ export default function Hero({ translations, currentLocale }) {
   };
 
   return (
-    <section
-      className="px-8 py-[7rem]"
-      style={{
-        backgroundImage: "url(/hero/bg.png)",
-        backgroundPosition: "-50% 60%",
-        backgroundSize: "982px 930px",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section className="px-8 pb-[5rem] pt-[6rem]">
       {/* content container */}
       <div
-        className="relative max-w-[85rem] w-full m-auto
-        flex flex-col gap-y-[7rem]"
+        className="relative w-full m-auto
+        max-w-[72.5rem] xl:max-w-[85rem] 
+        flex flex-col 
+        gap-y-[6rem] xl:gap-y-[7rem]"
       >
-        {/* background-robot */}
+        {/* background robot */}
         <div
-          className="absolute w-[616px] h-[616px] right-0 -top-20"
+          className="absolute w-[616px] h-[616px] right-0 -top-20 z-0"
           style={{ backgroundImage: "url(/hero/robot.svg)" }}
           aria-hidden
         >
           <div
-            className="absolute right-1/2 bottom-0 translate-x-1/2 w-[330px] h-[153px] bg-white"
+            className="absolute right-1/2 bottom-0 translate-x-1/2 bg-white
+            w-[373px] h-[92px] xl:w-[330px] xl:h-[153px]"
             style={{ boxShadow: "10px 10px 100px 100px rgba(255,255,255,1)" }}
           ></div>
         </div>
 
-        {/* left part */}
-        <div className="max-w-[39rem] flex flex-col gap-y-[4.4rem]">
+        {/* background gradient */}
+        <div
+          aria-hidden
+          className="absolute w-[982px] h-[930px] -translate-1/2
+          left-0 top-1/2 z-0"
+          style={{
+            backgroundImage: "url(/hero/bg.png)",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
+
+        {/* content */}
+        <div
+          className="max-w-[39rem] flex flex-col leading-[1.3]
+          gap-y-[2rem] xl:gap-y-[4.4rem] z-10"
+        >
           {getTitle()}
 
           <div>
@@ -101,6 +111,7 @@ export default function Hero({ translations, currentLocale }) {
 
           {getAdditionalText()}
         </div>
+
         <Opportunities
           translations={translations}
           currentLocale={currentLocale}

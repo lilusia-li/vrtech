@@ -4,10 +4,10 @@ import Button from "../reUseComponents/Button";
 export default function Types({ translations, currentLocale }) {
   const { types: t } = translations;
   return (
-    <section className="px-8 py-[7rem] relative  bg-[#fdfdfd]">
+    <section className="px-8 py-[6rem] relative bg-[#fdfdfd]">
       {/* background-images left */}
       <div
-        className="absolute top-0 left-0 max-w-2/3 w-full h-full"
+        className="absolute top-0 left-0 max-w-2/3 w-full h-full z-0"
         style={{
           backgroundImage: "url(/types/bg-left.svg)",
           backgroundRepeat: "no-repeat",
@@ -16,7 +16,7 @@ export default function Types({ translations, currentLocale }) {
       ></div>
       {/* background-images right */}
       <div
-        className="absolute top-0 right-0 max-w-2/3 w-full h-full rotate-180"
+        className="absolute top-0 right-0 max-w-2/3 w-full h-full rotate-180 z-0"
         style={{
           backgroundImage: "url(/types/bg-right.svg)",
           backgroundRepeat: "no-repeat",
@@ -25,7 +25,11 @@ export default function Types({ translations, currentLocale }) {
       ></div>
 
       {/* content container */}
-      <div className="flex flex-col gap-y-[2rem] max-w-[85rem] w-full m-auto">
+      <div
+        className="relative flex flex-col gap-y-[2rem] w-full m-auto
+        max-w-[72.5rem] xl:max-w-[85rem]
+        z-10"
+      >
         <h2 className="text-accent text-[2.5rem] font-medium">{t.title}</h2>
         <ul className="grid grid-cols-2 gap-[2rem]">
           {t.list.map((type) => {
@@ -33,10 +37,12 @@ export default function Types({ translations, currentLocale }) {
               <li
                 key={type.name}
                 className={clsx(
-                  "flex flex-col gap-y-[2rem] pr-[4rem] rounded-[30px]",
+                  `flex flex-col gap-y-[2rem] rounded-[30px]
+                  p-[2.5rem] pr-[1rem] xl:pr-[4rem]
+                  leading-[1.15]`,
                   {
-                    "p-[2.5rem]": currentLocale === "en",
-                    "p-[3.5rem]": currentLocale === "ru",
+                    "xl:p-[2.5rem]": currentLocale === "en",
+                    "xl:p-[3.5rem]": currentLocale === "ru",
                   }
                 )}
                 style={{
@@ -45,7 +51,10 @@ export default function Types({ translations, currentLocale }) {
                 }}
               >
                 <div className="flex flex-col gap-y-[0.8rem]">
-                  <h3 className="text-black text-[1.875rem] font-medium">
+                  <h3
+                    className="text-black text-[1.875rem] font-medium
+                  max-xl:min-h-[4.4rem]"
+                  >
                     {type.name}
                   </h3>
                   <p
@@ -60,29 +69,31 @@ export default function Types({ translations, currentLocale }) {
                 <h4 className="text-black font-semibold mt-[0.5rem]">
                   {type.subtitle}
                 </h4>
-                <ul className="flex flex-col gap-y-[1rem]">
-                  {type.advantagesList.map((advantage) => {
-                    return (
-                      <li
-                        key={advantage}
-                        className="font-medium
-                        px-[1.5rem]
-                        py-[1rem]
-                        rounded-[20px] border-[#b3dbf2]
-                        bg-white"
-                      >
-                        {advantage}
-                      </li>
-                    );
-                  })}
-                </ul>
-                <Button
-                  style="self-start min-w-[24.5rem]
+                <div className="flex flex-col justify-between gap-y-[2rem] h-full">
+                  <ul className="flex flex-col gap-y-[1rem]">
+                    {type.advantagesList.map((advantage) => {
+                      return (
+                        <li
+                          key={advantage}
+                          className="flex items-center font-medium
+                          min-h-[3.9rem]
+                          px-[1.5rem] py-[1rem]
+                          rounded-[20px] border-[#b3dbf2]
+                          bg-white"
+                        >
+                          {advantage}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <Button
+                    style="self-start min-w-[24.5rem]
                   px-[0.5rem] py-[1.25rem]
                   text-[1.25rem]"
-                >
-                  {type.buttonLabel}
-                </Button>
+                  >
+                    {type.buttonLabel}
+                  </Button>
+                </div>
               </li>
             );
           })}

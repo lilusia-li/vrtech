@@ -29,64 +29,71 @@ export default function Header({ translations }) {
   };
 
   return (
-    <header className="max-w-[89rem] w-full max-h-16 px-8 m-auto flex justify-between">
-      <div className="flex max-w-[38rem] w-full justify-between text-black">
-        {/* Область логотипа */}
-        <div className="flex flex-col items-end">
-          <div className="-mt-[5px] max-w-[231px] max-h-[45px]">
-            <img src="/header/logo.svg" alt="Логотип vrtech" />
-          </div>
-          <div className="flex items-center">
-            <div className="font-normal text-xs">{h.resident}</div>
-            <div className="max-w-[96px] max-h-[25px]">
-              <img src="/header/logo_resident.svg" alt="Logo astana hub" />
+    <header className="max-h-16 px-8">
+      {/* content container */}
+      <div
+        className="w-full m-auto 
+        flex justify-between
+        max-w-[72.5rem] xl:max-w-[85rem]"
+      >
+        <div className="flex max-w-[38rem] w-full justify-between text-black">
+          {/* Область логотипа */}
+          <div className="flex flex-col items-end">
+            <div className="-mt-[5px] max-w-[231px] max-h-[45px]">
+              <img src="/header/logo.svg" alt="Логотип vrtech" />
+            </div>
+            <div className="flex items-center">
+              <div className="font-normal text-xs">{h.resident}</div>
+              <div className="max-w-[96px] max-h-[25px]">
+                <img src="/header/logo_resident.svg" alt="Logo astana hub" />
+              </div>
             </div>
           </div>
+
+          {/* Область навигации */}
+          <nav className="flex max-w-[17rem] gap-x-[2rem] justify-between items-center">
+            {navigation.map((navObj) => {
+              return (
+                <Link className="shrink-0" key={navObj.key} href={navObj.url}>
+                  <p
+                    className={clsx("text-[1rem]", {
+                      "cursor-text font-semibold": pathname === navObj.url,
+                    })}
+                  >
+                    {navObj.title}
+                  </p>
+                </Link>
+              );
+            })}
+          </nav>
         </div>
 
-        {/* Область навигации */}
-        <nav className="flex max-w-[17rem] gap-x-[2rem] justify-between items-center">
-          {navigation.map((navObj) => {
-            return (
-              <Link className="shrink-0" key={navObj.key} href={navObj.url}>
-                <p
-                  className={clsx("text-[1rem]", {
-                    "cursor-text font-semibold": pathname === navObj.url,
+        {/* Область переключения языков */}
+        <div className="flex gap-x-[4rem] items-center">
+          <a
+            href={`tel:${phone.validPhone}`}
+            className="font-bold text-[1.125rem]"
+          >
+            {phone.phone}
+          </a>
+          <div className="flex gap-x-[1rem]">
+            {["ru", "en"].map((locale) => {
+              return (
+                <button
+                  key={locale}
+                  onClick={() => {
+                    currentLocale === locale ? "" : switchLocale(locale);
+                  }}
+                  className={clsx("font-bold text-[1.125rem] max-h-[2rem]", {
+                    "text-accent": locale === currentLocale,
+                    "cursor-pointer": locale !== currentLocale,
                   })}
                 >
-                  {navObj.title}
-                </p>
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-
-      {/* Область переключения языков */}
-      <div className="flex gap-x-[4rem] items-center">
-        <a
-          href={`tel:${phone.validPhone}`}
-          className="font-bold text-[1.125rem]"
-        >
-          {phone.phone}
-        </a>
-        <div className="flex gap-x-[1rem]">
-          {["ru", "en"].map((locale) => {
-            return (
-              <button
-                key={locale}
-                onClick={() => {
-                  currentLocale === locale ? "" : switchLocale(locale);
-                }}
-                className={clsx("font-bold text-[1.125rem] max-h-[2rem]", {
-                  "text-accent": locale === currentLocale,
-                  "cursor-pointer": locale !== currentLocale,
-                })}
-              >
-                {locale.toUpperCase()}
-              </button>
-            );
-          })}
+                  {locale.toUpperCase()}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </header>

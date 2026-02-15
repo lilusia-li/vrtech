@@ -44,11 +44,12 @@ export default function Reviews({ translations }) {
   const currentSlide = cards[indexFirstCard];
 
   return (
-    <section className="px-8 py-[3.5rem] bg-[#fbfbfd]">
+    <section className="px-8 py-[3.5rem] bg-[#fbfbfd] overflow-x-hidden">
       {/* content container */}
       <div
-        className="relative max-w-[85rem] w-full m-auto
-        flex flex-col gap-y-[2rem]"
+        className="w-full m-auto
+        flex flex-col gap-y-[2rem]
+        max-w-[72.5rem] xl:max-w-[85rem]"
       >
         <h2 className="text-accent text-[2.5rem] font-medium">{r.title}</h2>
         <div className="relative">

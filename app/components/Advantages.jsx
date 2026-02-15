@@ -28,7 +28,7 @@ export default function Advantages({ translations }) {
   ];
   return (
     <section
-      className="px-8 py-[7rem] bg-[#fdfdfd]"
+      className="px-8 pt-[5rem] pb-[6rem] bg-[#fdfdfd]"
       style={{
         backgroundImage: "url(/advantages/bg.jpg)",
         backgroundRepeat: "no-repeat",
@@ -36,14 +36,18 @@ export default function Advantages({ translations }) {
       }}
     >
       {/* content container */}
-      <div className="flex flex-col gap-y-[1rem] max-w-[85rem] w-full m-auto">
+      <div
+        className="flex flex-col gap-y-[1rem] w-full m-auto
+        max-w-[72.5rem] xl:max-w-[85rem]"
+      >
         <h2 className="text-accent text-[2.5rem] font-medium">{a.title}</h2>
         <ul className="grid grid-cols-3 gap-[2rem]">
           {advantages.map((advantage) => {
             return (
               <li
                 key={advantage.name}
-                className="min-h-[16.8rem] px-[1rem] py-[1rem]
+                className="min-h-[16.8rem] 
+                p-[1rem] max-xl:p-[2rem]
                 rounded-[30px]"
                 style={{
                   alignItems: "top",
@@ -51,7 +55,8 @@ export default function Advantages({ translations }) {
                 }}
               >
                 <p
-                  className="mt-[1.5rem] text-center pt-[6rem]"
+                  className="mt-[1.5rem] text-center pt-[6rem]
+                  max-xl:whitespace-normal"
                   style={{
                     backgroundImage: `url(${advantage.imageSrc})`,
                     backgroundSize: "80px 80px",

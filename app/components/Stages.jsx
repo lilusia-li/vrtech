@@ -38,7 +38,10 @@ export default function Stages({ translations }) {
       }}
     >
       {/* content container */}
-      <div className="flex flex-col gap-y-[3rem] max-w-[85rem] w-full m-auto">
+      <div
+        className="flex flex-col gap-y-[3rem] w-full m-auto
+        max-w-[72.5rem] xl:max-w-[85rem] "
+      >
         <h2 className="text-accent text-[2.5rem] font-medium">{s.title}</h2>
         <ul className="flex flex-col gap-y-[3rem]">
           {stages.map((stage, index) => {
@@ -57,7 +60,8 @@ export default function Stages({ translations }) {
                   src={`${stage.imageSrc}`}
                   alt=""
                   aria-hidden="true"
-                  className="w-[605px] h-[518px]"
+                  className="w-[570px] xl:w-[605px] 
+                  h-[488px] xl:h-[518px]"
                 />
                 <div className="flex flex-col gap-y-[2rem] ">
                   <h3 className="text-[1.5625rem] font-medium">

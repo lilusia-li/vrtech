@@ -10,7 +10,10 @@ export default function Numbers({ translations }) {
       }}
     >
       {/* content container */}
-      <div className="flex flex-col gap-y-[2rem] max-w-[85rem] w-full m-auto">
+      <div
+        className="flex flex-col gap-y-[2rem] w-full m-auto
+        max-w-[72.5rem] xl:max-w-[85rem] "
+      >
         <h2 className="text-accent text-[2.5rem] font-medium">{n.title}</h2>
         <ul className="flex justify-between gap-x-[2rem]">
           {n.list.map((elem) => {

@@ -9,15 +9,20 @@ export default function Speech({ translations }) {
       }}
     >
       {/* content container */}
-      <div className="relative flex justify-end gap-x-[2rem] max-w-[85rem] w-full m-auto">
+      <div
+        className="relative flex justify-end gap-x-[2rem] w-full m-auto
+        max-w-[72.5rem] xl:max-w-[85rem]"
+      >
+        {/* background-robot */}
         <img
           src="/speech/robot.svg"
           width={698}
-          className="absolute -left-5 -bottom-25 max-w-[698px] w-full"
+          className="absolute -left-5 -bottom-25  w-full
+          max-w-[625px] xl:max-w-[698px]"
           aria-hidden
         />
         <div className="flex flex-col gap-[2rem] max-w-[35rem] justify-self-end">
-          <h2 className="text-[2.5rem] font-medium first:mb-[1rem]">
+          <h2 className="text-[2.5rem] font-medium first:mb-[1rem] leading-[1.3]">
             {s.title}
           </h2>
           <p>

@@ -17,7 +17,10 @@ export default function Cases({ translations }) {
       }}
     >
       {/* content container */}
-      <div className="flex flex-col gap-y-[4rem] max-w-[85rem] w-full m-auto">
+      <div
+        className="flex flex-col gap-y-[4rem] w-full m-auto
+        max-w-[72.5rem] xl:max-w-[85rem]"
+      >
         <h2 className="text-accent text-[2.5rem] font-medium">{c.title}</h2>
         <ul className="grid grid-cols-2 gap-x-[2rem] gap-y-[4rem]">
           {c.list.map((item, index) => {
@@ -27,10 +30,12 @@ export default function Cases({ translations }) {
                 className="flex flex-col gap-y-[2rem]"
               >
                 <div
-                  className="flex flex-col justify-between min-h-[416px] px-[1.5rem] py-[2.5rem] text-white font-medium"
+                  className="flex flex-col justify-between min-h-[416px] px-[1.5rem] py-[2.5rem]
+                  text-white font-medium
+                  rounded-[30px]"
                   style={{
-                    backgroundImage: `url(${images[index]})`,
-                    backgroundSize: "664px 416px",
+                    backgroundImage: `url(${images[index]}), linear-gradient(0.459turn, rgba(238, 241, 255, 0.8) 0%, rgb(219, 227, 249) 100%)`,
+                    backgroundSize: "100% auto",
                     backgroundRepeat: "no-repeat",
                   }}
                 >
@@ -48,7 +53,7 @@ export default function Cases({ translations }) {
                       return (
                         <li
                           key={point}
-                          className="text-[0.875rem] py-[0.5rem] px-[1rem] 
+                          className="text-[0.875rem] py-[0.5rem] px-[1rem]
                           rounded-[15px] border-[#b3dbf2]
                           bg-accent/50"
                         >

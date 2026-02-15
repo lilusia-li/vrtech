@@ -19,9 +19,16 @@ export default function Opportunities({ translations, currentLocale }) {
   ];
 
   return (
-    <section className="flex flex-col gap-y-[2rem]">
-      <div className="flex flex-col gap-y-[1.5rem]">
-        <h2 className="text-accent text-[2.5rem] font-medium">{o.title}</h2>
+    <section className="flex flex-col gap-y-[2rem] z-10">
+      <div className="flex flex-col gap-y-[2rem]">
+        <h2
+          className={clsx("text-accent  font-medium", {
+            "text-[2.5rem]": currentLocale === "en",
+            "text-[1.875rem]": currentLocale === "ru",
+          })}
+        >
+          {o.title}
+        </h2>
 
         {o.description.map((paragraph, index) => {
           return (
