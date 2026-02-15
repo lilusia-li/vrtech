@@ -23,14 +23,19 @@ export default function Clients({ translations }) {
   const currentSlide = slides[slide];
 
   return (
-    <section className="px-8 py-[6rem] bg-[#d0defc]">
+    <section className="px-8 py-[3rem] md:py-[6rem] bg-[#d0defc]">
       {/* content container */}
       <div
         className="w-full m-auto
         flex flex-col gap-y-[2rem]
         max-w-[72.5rem] xl:max-w-[85rem]"
       >
-        <h2 className="text-[2.5rem] font-medium">{c.title}</h2>
+        <h2
+          className="font-medium
+          text-[1.625rem] md:text-[2.5rem]"
+        >
+          {c.title}
+        </h2>
 
         <div className="relative min-h-[67px] flex">
           <button
@@ -43,7 +48,7 @@ export default function Clients({ translations }) {
           >
             <img
               src="/slider/arrow_right.svg"
-              className="w-[17px] rotate-180"
+              className="w-[10px] md:w-[17px] rotate-180"
             />
           </button>
 
@@ -55,10 +60,18 @@ export default function Clients({ translations }) {
             }}
             className="absolute -right-7 top-1/2 -translate-y-1/2"
           >
-            <img src="/slider/arrow_right.svg" className="w-[17px]" />
+            <img
+              src="/slider/arrow_right.svg"
+              className="w-[10px] md:w-[17px]"
+            />
           </button>
 
-          <ul className="flex items-center gap-x-[1rem] justify-between w-full">
+          <ul
+            className="grid gap-[1rem] m-auto
+            grid-cols-2 sm:grid-cols-3 
+            justify-items-center items-center
+            lg:flex lg:justify-between lg:w-full"
+          >
             {currentSlide.map((picture) => {
               return (
                 <li key={picture}>
@@ -67,7 +80,7 @@ export default function Clients({ translations }) {
                     width={190}
                     height={67}
                     className="rounded-[10px]
-                  max-w-[160px] xl:max-w-[180px]"
+                    max-w-[125px] sm:max-w-[170px] lg:max-w-[140px] xl:max-w-[180px]"
                   />
                 </li>
               );
