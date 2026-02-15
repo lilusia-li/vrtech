@@ -23,7 +23,7 @@ export default function Clients({ translations }) {
   const currentSlide = slides[slide];
 
   return (
-    <section className="px-8 py-[3rem] md:py-[6rem] bg-[#d0defc]">
+    <section className="px-[0.1rem] lg:px-8 py-[3rem] md:py-[6rem] bg-[#d0defc]">
       {/* content container */}
       <div
         className="w-full m-auto
@@ -32,12 +32,12 @@ export default function Clients({ translations }) {
       >
         <h2
           className="font-medium
-          text-[1.625rem] md:text-[2.5rem]"
+          text-[1.625rem] sm:text-[2.5rem]"
         >
           {c.title}
         </h2>
 
-        <div className="relative min-h-[67px] flex">
+        <div className="relative min-h-[67px] flex max-lg:mx-8">
           <button
             onClick={() => {
               setSlide((curSlide) => {

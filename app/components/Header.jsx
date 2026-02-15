@@ -34,7 +34,7 @@ export default function Header({ translations }) {
       <div
         className="w-full m-auto 
         flex justify-between
-        max-w-[72.5rem] xl:max-w-[85rem]"
+        max-w-[72.5rem] xl:max-w-[85rem] overflow-x-hidden"
       >
         <div className="flex max-w-[38rem] w-full justify-between text-black">
           {/* Область логотипа */}

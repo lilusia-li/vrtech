@@ -2,7 +2,7 @@ export default function Speech({ translations }) {
   const { speech: s } = translations;
   return (
     <section
-      className="px-8 py-[4rem] overflow-hidden"
+      className="px-[0.1rem] lg:px-8 py-[3rem] md:py-[4rem] overflow-hidden"
       style={{
         backgroundImage:
           "linear-gradient(0.742turn,rgba(172,198,244,1) 0%,rgba(223,232,255,0) 100%)",
@@ -22,7 +22,10 @@ export default function Speech({ translations }) {
           aria-hidden
         />
         <div className="flex flex-col gap-[2rem] max-w-[35rem] justify-self-end">
-          <h2 className="text-[2.5rem] font-medium first:mb-[1rem] leading-[1.3]">
+          <h2
+            className="font-medium first:mb-[1rem] leading-[1.3]
+            text-[1.625rem] sm:text-[2.5rem]"
+          >
             {s.title}
           </h2>
           <p>

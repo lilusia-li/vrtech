@@ -38,7 +38,7 @@ export default function Footer({ translations }) {
       {/* content container */}
       <div
         className="flex justify-between w-full m-auto text-black
-        max-w-[72.5rem] xl:max-w-[85rem]"
+        max-w-[72.5rem] xl:max-w-[85rem] overflow-x-hidden"
       >
         {/* first column */}
         <div className="flex flex-col text-[0.875rem] text-less-dark">

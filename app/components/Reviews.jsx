@@ -40,18 +40,22 @@ export default function Reviews({ translations }) {
       cards.push(cardsData.slice(i));
     } else cards.push(cardsData.slice(i, i + cardsCount));
   }
-  console.log(cards);
   const currentSlide = cards[indexFirstCard];
 
   return (
-    <section className="px-8 py-[3.5rem] bg-[#fbfbfd] overflow-x-hidden">
+    <section className="px-[0.1rem] lg:px-8 py-[3rem] md:py-[3.5rem] bg-[#fbfbfd] overflow-x-hidden">
       {/* content container */}
       <div
         className="w-full m-auto
         flex flex-col gap-y-[2rem]
         max-w-[72.5rem] xl:max-w-[85rem]"
       >
-        <h2 className="text-accent text-[2.5rem] font-medium">{r.title}</h2>
+        <h2
+          className="text-accent font-medium
+          text-[1.625rem] sm:text-[2.5rem]"
+        >
+          {r.title}
+        </h2>
         <div className="relative">
           <button
             onClick={() => {

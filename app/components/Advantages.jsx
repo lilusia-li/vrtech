@@ -32,7 +32,7 @@ export default function Advantages({ translations }) {
   ];
 
   const [slide, setSlide] = useState(0);
-  const slides = advantages.slice().map((item) => {
+  const slides = advantages.map((item) => {
     return [item];
   });
   const currentSlide = slides[slide];
@@ -53,8 +53,8 @@ export default function Advantages({ translations }) {
       >
         <h2
           className="text-accent font-medium
-          text-[1.625rem] md:text-[2.5rem]
-          leading-[1.3] mr-[70px]"
+          text-[1.625rem] sm:text-[2.5rem]
+          leading-[1.3] mr-[90px]"
         >
           {a.title}
         </h2>
@@ -87,6 +87,7 @@ export default function Advantages({ translations }) {
           />
         </button>
 
+        {/* vw < 1024px slider */}
         <ul className="grid lg:hidden gap-[2rem] px-2 justify-items-center">
           {currentSlide.map((advantage) => {
             return (
@@ -102,7 +103,7 @@ export default function Advantages({ translations }) {
               >
                 <p
                   className="lg:mt-[1.5rem] text-center pt-[6rem]
-                  text-[0.9rem]
+                  text-[1rem]
                   max-xl:whitespace-normal"
                   style={{
                     backgroundImage: `url(${advantage.imageSrc})`,
@@ -121,6 +122,7 @@ export default function Advantages({ translations }) {
           })}
         </ul>
 
+        {/* vw >= 1024px */}
         <ul className="grid max-lg:hidden grid-cols-3 gap-[2rem] px-2 justify-items-center">
           {advantages.map((advantage) => {
             return (

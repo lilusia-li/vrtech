@@ -10,7 +10,7 @@ export default function Cases({ translations }) {
 
   return (
     <section
-      className="px-8 py-[4rem]"
+      className="px-[0.1rem] lg:px-8 py-[3rem] md:py-[4rem]"
       style={{
         backgroundImage:
           "linear-gradient(0.248turn,rgba(251,251,253,1) 0%,rgba(235,240,253,1) 100%)",
@@ -19,9 +19,14 @@ export default function Cases({ translations }) {
       {/* content container */}
       <div
         className="flex flex-col gap-y-[4rem] w-full m-auto
-        max-w-[72.5rem] xl:max-w-[85rem]"
+        max-w-[72.5rem] xl:max-w-[85rem] overflow-x-hidden"
       >
-        <h2 className="text-accent text-[2.5rem] font-medium">{c.title}</h2>
+        <h2
+          className="text-accent font-medium
+          text-[1.625rem] sm:text-[2.5rem]"
+        >
+          {c.title}
+        </h2>
         <ul className="grid grid-cols-2 gap-x-[2rem] gap-y-[4rem]">
           {c.list.map((item, index) => {
             return (

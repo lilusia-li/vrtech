@@ -53,7 +53,7 @@ export default function Hero({ translations, currentLocale }) {
   };
 
   return (
-    <section className="px-[0.2rem] lg:px-8 py-[3rem] md:py-[6rem]">
+    <section className="px-[0.1rem] lg:px-8 py-[3rem] md:py-[6rem]">
       {/* content container */}
       <div
         className="relative w-full m-auto

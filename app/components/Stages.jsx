@@ -30,7 +30,7 @@ export default function Stages({ translations }) {
   ];
   return (
     <section
-      className="px-8 py-[7rem]"
+      className="px-[0.1rem] lg:px-8 py-[3rem] md:py-[6rem] overflow-x-hidden"
       style={{
         backgroundImage: "url(/stages/bg.jpg)",
         backgroundSize: "cover",
@@ -40,9 +40,14 @@ export default function Stages({ translations }) {
       {/* content container */}
       <div
         className="flex flex-col gap-y-[3rem] w-full m-auto
-        max-w-[72.5rem] xl:max-w-[85rem] "
+        max-w-[72.5rem] xl:max-w-[85rem] overflow-x-hidden"
       >
-        <h2 className="text-accent text-[2.5rem] font-medium">{s.title}</h2>
+        <h2
+          className="text-accent font-medium
+          text-[1.625rem] sm:text-[2.5rem]"
+        >
+          {s.title}
+        </h2>
         <ul className="flex flex-col gap-y-[3rem]">
           {stages.map((stage, index) => {
             return (
