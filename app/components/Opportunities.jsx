@@ -19,12 +19,17 @@ export default function Opportunities({ translations, currentLocale }) {
   ];
 
   return (
-    <section className="flex flex-col gap-y-[2rem] z-10">
-      <div className="flex flex-col gap-y-[2rem]">
+    <section
+      className="flex flex-col items-center gap-y-[1rem] sm:gap-y-[2rem] z-10
+      max-sm:max-w-[25rem] max-lg:max-w-[38.75rem]"
+    >
+      <div className="flex flex-col gap-y-[0.7rem] sm:gap-y-[2rem]">
         <h2
-          className={clsx("text-accent  font-medium", {
-            "text-[2.5rem]": currentLocale === "en",
-            "text-[1.875rem]": currentLocale === "ru",
+          className={clsx("text-accent font-medium", {
+            "text-[1rem] sm:text-[1.625rem] md:text-[2.5rem]":
+              currentLocale === "en",
+            "text-[1rem] sm:text-[1.625rem] text-[1.875rem]":
+              currentLocale === "ru",
           })}
         >
           {o.title}
@@ -32,7 +37,10 @@ export default function Opportunities({ translations, currentLocale }) {
 
         {o.description.map((paragraph, index) => {
           return (
-            <p key={paragraph}>
+            <p
+              key={paragraph}
+              className="text-[0.6875rem] sm:text-[1.125rem] lg:text-[1.25rem]"
+            >
               {index === 0 ? (
                 <span className="font-bold">{o.description_strong || ""}</span>
               ) : (
@@ -45,17 +53,29 @@ export default function Opportunities({ translations, currentLocale }) {
         })}
       </div>
 
-      <ul className="flex justify-around gap-x-[1rem]">
-        {opportunities.map((opportunity, index) => {
+      <ul
+        className="flex justify-around gap-[1rem]
+        flex-col lg:flex-row
+        md:mt-[1rem] max-lg:max-w-fit lg:w-full"
+      >
+        {opportunities.map((opportunity) => {
           return (
             <li
               key={opportunity.name}
-              className="pt-[82px] text-center font-medium flex-1"
+              className="flex flex-1 items-center lg:justify-center
+              text-start lg:text-center lg:max-w-[20.8rem]
+              
+              font-medium text-[0.75rem] sm:text-[1.1875rem] lg:text-[1.25rem]
+
+              bg-[length:45px_45px] lg:bg-[length:75px_75px]
+              bg-left lg:bg-top 
+              bg-no-repeat
+              min-h-[45px]
+              
+              max-lg:pl-[60px] lg:pt-[82px]
+              max-lg:whitespace-normal"
               style={{
                 backgroundImage: `url(${opportunity.imageSrc})`,
-                backgroundPosition: "top",
-                backgroundSize: "75px 75px",
-                backgroundRepeat: "no-repeat",
               }}
             >
               <span className="font-bold">
